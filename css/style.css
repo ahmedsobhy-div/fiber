@@ -1,0 +1,315 @@
+/* ==========================================================================
+   1. Reset & Global Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* ==========================================================================
+   2. Navbar
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #111;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ffc107;
+}
+
+.cart {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#cart-count {
+    background-color: #ffc107;
+    color: #111;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+.hero {
+    height: 60vh; /* قللت الارتفاع شوية عشان يبان متناسق */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-content button {
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+    color: #111;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.hero-content button:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   4. Products Grid & Cards (السر هنا لضبط المقاسات)
+   ========================================================================== */
+/* منادي على الحاوية بـ id وبـ class عشان نضمن إنها تقرأ في الصفتين */
+.products, #products, #cart-items {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تنسيق كارت المنتج */
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* تحديد حجم الصورة الإجباري عشان ما تفرشش في الشاشة */
+.product-card img {
+    width: 100%;
+    height: 200px;         /* إجبار الصورة على طول محدد */
+    object-fit: contain;   /* عشان الصورة متتمطش وتظهر كاملة ونظيفة */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* تنسيق الزراير */
+.product-card button {
+    width: 100%;
+    padding: 10px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.product-card button:hover {
+    background: #333;
+}
+
+/* ==========================================================================
+   5. Medical & Tech Sections Styling (السكاشن الجديدة)
+   ========================================================================== */
+
+/* تنسيق السيكشن الكبير اللي شايل العنوان والمنتجات */
+.products-section {
+    padding: 20px 0;
+    background-color: #f5f5f5; /* نفس خلفية الصفحة عشان تندمج معاها */
+}
+
+/* تنسيق العناوين المطبوعة بالـ JS */
+.section-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+/* الخط الأصفر الرايق اللي تحت العناوين */
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: #ffc107; /* نفس لون العداد الأصفر المظبوط */
+    margin: 10px auto 40px auto;
+    border-radius: 2px;
+}
+
+/* مسافة أمان تحت السيكشن الطبي عشان نهاية الصفحة تكون مريحة للعين */
+#medical-section {
+    margin-bottom: 80px;
+}
+
+/* --- التنسيق الكامل والنهائي للفوتر --- */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px 10px 20px;
+    margin-top: 60px;
+    direction: rtl; /* عشان الترتيب العربي يظبط من اليمين للشمال */
+}
+
+/* الحاوية الأساسية اللي بتخليهم جمب بعض */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* تنسيق كل عمود لوحده */
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-col h3 {
+    color: #ffcc00; /* اللون الأصفر الرايق بتاعك */
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    color: #b3b3b3;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ffcc00;
+}
+
+/* تنسيق الفورم والمدخلات عشان مياخدوش الشاشة كلها */
+#orderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#orderForm input, #orderForm textarea {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #2b2b2b;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+#orderForm input:focus, #orderForm textarea:focus {
+    border-color: #ffcc00;
+}
+
+/* زرار الإرسال الأصفر */
+.submit-btn {
+    background-color: #ffcc00;
+    color: #111;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e6b800;
+}
+
+/* الجزء السفلي للحقوق */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    color: #666;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ahmed Store</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <div class="logo">
+      Ahmed Store
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+
+    <a href="cart.html" class="cart" style="text-decoration: none; color: white;">
+    🛒<span id="cart-count">0</span>
+</a>
+
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Modern Shopping Experience
+      </h1>
+
+      <p>
+        Discover Premium Products
+      </p>
+
+      <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+    Shop Now
+</button>
+
+    </div>
+
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+
+  </section>
+  <section class="products-section" id="medical-section"></section>
+  
+
+  <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Ahmed Store 🛒</h3>
+            <p>بوابتك الأولى للحصول على أفضل الأجهزة الإلكترونية الحديثة والمستلزمات الطبية وسكرابات الأسنان بأعلى جودة.</p>
+        </div>
+        
+        <div class="footer-col">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="#products">الأجهزة الإلكترونية</a></li>
+                <li><a href="#medical-section">المنتجات الطبية</a></li>
+                <li><a href="cart.html">عربة التسوق</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h3>تواصل معنا</h3>
+            <p>📍 طنطا، مصر</p>
+            <p>📧 ahmedsobhig2@gmail.com</p>
+            <p>📞 01064002660</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>أرسل طلبك الآن 📝</h3>
+            <form id="orderForm" onsubmit="handleOrder(event)">
+                <input type="text" id="clientName" placeholder="إسمك بالكامل" required>
+                <input type="tel" id="clientPhone" placeholder="رقم الموبايل" required>
+                <textarea id="clientAddress" placeholder="العنوان بالتفصيل" rows="2" required></textarea>
+                <button type="submit" class="submit-btn">تأكيد الطلب السريع</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة &copy; 2026 | تم التطوير بكل حب 💻</p>
+    </div>
+</footer>
+
+ <script src="js/data.js"></script>
+  <script src="js/main.js"></script>  
+</body>
+</html>
